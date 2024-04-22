@@ -1,11 +1,7 @@
 import {
-  Container,
   Box,
-  Toolbar,
-  Typography,
   Card,
   CardContent,
-  Grid,
   Stack,
   Button,
 } from "@mui/material/";
@@ -15,7 +11,6 @@ import { useEffect, useRef, useState } from "react";
 import getInstance from "../support_functions/GenerateInstance";
 import PuzzleGrid from "./PuzzleGrid";
 
-let originalPieces = [];
 let originalarray = [];
 let emptyPiece;
 
@@ -59,10 +54,9 @@ export default function PuzzleBoard({ images, open }) {
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(imageObj, 0, 0, 0, 0, 0, 0, 0, 0);
       const imageDataurl = canvas.toDataURL();
-      emptyPiece = { imageDataurl, index: 8 };
+      emptyPiece = { imageDataurl, index: 0 };
 
       setPieces(images);
-      originalPieces = { ...images };
     };
     imageObj.src = images[0];
   }, [images]);

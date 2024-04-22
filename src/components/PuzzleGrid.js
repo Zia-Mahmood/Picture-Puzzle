@@ -1,18 +1,16 @@
 import {
-    Container,
-    Box,
-    Toolbar,
-    Typography,
-    Card,
-    CardContent,
     Grid,
-    Stack,
     Button,
   } from "@mui/material/";
+import { useEffect } from "react";
 
 
 
 export default function PuzzleGrid({pieces,emptyPiece,setPieces,setShuffled}){
+
+    useEffect(()=>{
+        console.log("from use effect",pieces)
+    },[pieces]);
 
     function findEmptyPiece(piece){
         return piece.index === emptyPiece.index;
@@ -35,7 +33,7 @@ export default function PuzzleGrid({pieces,emptyPiece,setPieces,setShuffled}){
                 ans = false;
             }
         });
-        console.log()
+        console.log("ans finished",ans)
         return ans;
     }
 
@@ -46,8 +44,9 @@ export default function PuzzleGrid({pieces,emptyPiece,setPieces,setShuffled}){
             setPieces((prev)=>{
                 const temp = [...prev];
                 [temp[emptyPieceIndex],temp[index]]=[temp[index],temp[emptyPieceIndex]];
-                return temp;
-            })
+                return [...temp];
+            });
+            console.log(pieces)
             if(gamefinished()){
                 setShuffled(1);
             }
@@ -71,7 +70,7 @@ export default function PuzzleGrid({pieces,emptyPiece,setPieces,setShuffled}){
         >
           <img
             src={
-              piece.index === 8
+              piece.index === 0
                 ? emptyPiece.imageDataurl
                 : piece.imageDataurl
             }

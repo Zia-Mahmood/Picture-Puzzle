@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d5659a9a.css",
+    "main.js": "/static/js/main.1803a20c.js",
+    "static/js/453.f2ac2856.chunk.js": "/static/js/453.f2ac2856.chunk.js",
+    "static/media/puzzle_2.jpg": "/static/media/puzzle_2.d86800ef6e3b3138f101.jpg",
+    "static/media/puzzle_7.jpg": "/static/media/puzzle_7.77f0a7827a78cbdb2c24.jpg",
+    "static/media/puzzle_4.jpg": "/static/media/puzzle_4.a5ca38e4e3efd00cab29.jpg",
+    "static/media/puzzle_6.jpg": "/static/media/puzzle_6.d017148ce6b67ef37e41.jpg",
+    "static/media/puzzle_5.jpg": "/static/media/puzzle_5.acf3162619684c3dc3ab.jpg",
+    "static/media/puzzle_1.jpg": "/static/media/puzzle_1.0336ee270dadaa99d933.jpg",
+    "static/media/puzzle_3.jpg": "/static/media/puzzle_3.ced846ec57728f804146.jpg",
+    "static/media/puzzle_8.jpg": "/static/media/puzzle_8.d581e65ba99a3715ea4f.jpg",
+    "index.html": "/index.html",
+    "main.d5659a9a.css.map": "/static/css/main.d5659a9a.css.map",
+    "main.1803a20c.js.map": "/static/js/main.1803a20c.js.map",
+    "453.f2ac2856.chunk.js.map": "/static/js/453.f2ac2856.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5659a9a.css",
+    "static/js/main.1803a20c.js"
+  ]
+}
