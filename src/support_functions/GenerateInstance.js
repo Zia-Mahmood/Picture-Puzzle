@@ -14,7 +14,6 @@ function shuffle(array) {
   function getInstance(n){
     let arr = Array.from({length: n}, (_,index) => index);
     shuffle(arr);
-    console.log(arr);
     while(!isSolvable(arr,n)){
       shuffle(arr);
       console.log(arr);
