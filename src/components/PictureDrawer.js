@@ -1,4 +1,4 @@
-import { Divider, Drawer, Box, ImageList, ImageListItem, IconButton } from "@mui/material";
+import { Divider, Drawer, ImageList, ImageListItem, IconButton } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
