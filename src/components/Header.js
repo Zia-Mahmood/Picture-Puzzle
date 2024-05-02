@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header({handleDrawerOpen,open}) {
   return (
-    <AppBar position="static">
+    <AppBar>
       <Toolbar
         sx={{
           backgroundColor: "#f44d3e",

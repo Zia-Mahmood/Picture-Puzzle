@@ -60,7 +60,7 @@ export default function PuzzleGrid({
             key={index}
             item
             xs={4}
-            sx={{ height: "240px", width: "240px" }}
+            sx={{ height: {xs:"90px",sm:"240px"}, width: {xs:"90px",sm:"240px"} }}
           >
             <img
               src={
@@ -80,8 +80,9 @@ export default function PuzzleGrid({
               key={index}
               onClick={() => handleClick(index)}
               style={{
-                width: "240px",
-                height: "240px",
+                width: "inherit",
+                height: "inherit",
+                alignSelf:"stretch",
                 border: "none",
                 zIndex: 12,
               }}

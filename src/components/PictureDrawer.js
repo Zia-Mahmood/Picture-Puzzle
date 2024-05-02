@@ -21,12 +21,13 @@ export default function PictureDrawer({ images, open, handleDrawerClose }) {
   return (
     <Drawer
       sx={{
-        width: drawerWidth,
+        width: {xs:"40%",sm:drawerWidth},
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: drawerWidth,
+          width: {xs:"40%",sm:drawerWidth},
           boxSizing: "border-box",
         },
+        
       }}
       variant="persistent"
       anchor="left"
@@ -49,7 +50,8 @@ export default function PictureDrawer({ images, open, handleDrawerClose }) {
             gap: "15px",
             alignItems: "center",backgroundColor:"#fcd3cf",
             mt: "0px",
-            mb: "0px"
+            mb: "0px",
+            pb:"20px"
           }}
         >
           {images.map((img, index) => {
@@ -65,6 +67,7 @@ export default function PictureDrawer({ images, open, handleDrawerClose }) {
             );
           })}
         </ImageList>
+        <div style={{alignSelf:"auto",backgroundColor:"red"}}></div>
     </Drawer>
     
   );

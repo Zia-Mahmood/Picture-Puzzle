@@ -1,15 +1,11 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Stack,
-  Button,
-} from "@mui/material/";
+import { Box, Card, CardContent, Stack, Button } from "@mui/material/";
 import ShuffleOnIcon from "@mui/icons-material/ShuffleOn";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import { useEffect, useRef, useState } from "react";
 import getInstance from "../support_functions/GenerateInstance";
 import PuzzleGrid from "./PuzzleGrid";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 let originalarray = [];
 let emptyPiece;
@@ -18,7 +14,9 @@ export default function PuzzleBoard({ images, open }) {
   const width = open ? "80%" : "100%";
   const canvasRef = useRef();
   const [pieces, setPieces] = useState();
-  const [shuffled,setShuffled] = useState(1);
+  const [shuffled, setShuffled] = useState(1);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("xs"));
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -83,6 +81,7 @@ export default function PuzzleBoard({ images, open }) {
         width: `${width}`,
         height: "100%",
         alignSelf: "flex-end",
+        mt: "64px",
       }}
     >
       <Card
@@ -94,14 +93,14 @@ export default function PuzzleBoard({ images, open }) {
           alignItems: "center",
           flexDirection: "column",
           backgroundColor: "#55e9f5",
-          pb: "10px",
+          pb: { xs: "2px", sm: "10px" },
         }}
       >
         <CardContent
           className="myCardContent"
           sx={{
-            width: "720px",
-            height: "720px",
+            width: { xs: "270px", sm: "720px" },
+            height: { xs: "270px", sm: "720px" },
           }}
         >
           <Box
@@ -126,17 +125,30 @@ export default function PuzzleBoard({ images, open }) {
             />
           </Box>
 
-          {shuffled===0.2 &&<PuzzleGrid pieces={pieces} emptyPiece={emptyPiece} setPieces={setPieces} setShuffled={setShuffled}/>}
+          {shuffled === 0.2 && (
+            <PuzzleGrid
+              pieces={pieces}
+              emptyPiece={emptyPiece}
+              setPieces={setPieces}
+              setShuffled={setShuffled}
+            />
+          )}
         </CardContent>
         <canvas
           ref={canvasRef}
-          style={{ display: "none", width: "720px", height: "720px" }}
+          style={{
+            display: "none",
+            width: { xs: "270px", sm: "720px" },
+            height: { xs: "270px", sm: "720px" },
+          }}
         />
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} sx={{mb:"10px"}}>
           <Button
             variant="contained"
             sx={{
               backgroundColor: "#f44d3e",
+              width:{xs:"90px",sm:"124px"},
+              fontSize:{xs:"10px", sm:"14px"},
               ":hover": { backgroundColor: "#b155f5" },
             }}
             startIcon={<ShuffleOnIcon />}
@@ -146,8 +158,11 @@ export default function PuzzleBoard({ images, open }) {
           </Button>
           <Button
             variant="contained"
+            size={isSmallScreen?"small":"medium"}
             sx={{
               backgroundColor: "#f44d3e",
+              width:{xs:"140px",sm:"184px"},
+              fontSize:{xs:"10px", sm:"14px"},
               ":hover": { backgroundColor: "#b155f5" },
             }}
             endIcon={<TipsAndUpdatesIcon />}
